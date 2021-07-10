@@ -9,14 +9,22 @@
   flex-direction: column;
   background-color: brown;
   border-style: double;
-  height: 80%;
 }
 
 .game-info {
-  height: 20%;
+  display: flex;
+  min-height: 10rem;
 }
 
+.dice-container{
+  background-color: #282c34;
+  min-width: 15rem;
+  margin: 1rem 0 1rem 1rem;
+}
 .play-surface {
-  height: auto;
+  width: 100%;
+}
+
+.table-layout{
   width: 100%;
 }
