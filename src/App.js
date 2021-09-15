@@ -1,22 +1,24 @@
-import board from './assets/table/board.png'
-import Die from './components/dice'
-import './App.css';
+import board from "./assets/table/board.png";
+import Die from "./components/dice";
+import BetArea from "./components/BetArea";
+import "./App.css";
+import { GlobalProvider } from "./context/GlobalContext";
+import ChipRack from "./components/ChipRack";
 
 function App() {
   return (
-    <div className="craps">
-      <div className="game-container">
-        <div className="game-info">
-          <div className="dice-container">
-            <Die/>
-          </div>
+    <GlobalProvider>
+      <div className="craps">
+        <div className="pass-line">
+          <BetArea name="pass_line" />
+          <ChipRack />
         </div>
-        <div className="play-surface">
-          <img src={board} className="table-layout" alt=""/>
-        </div>
+        <div className="chip-rack"></div>
       </div>
-    </div>
+    </GlobalProvider>
   );
 }
+
+// 9/22/21 Roll dice, Apply results to pass line bet. Read up on Context and Providers.
 
 export default App;

@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 class Die extends Component {
   render() {
     return (
-        <div className="die">
+      <div className="die">
 
-        </div>
+      </div>
     )
   }
 
