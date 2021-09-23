@@ -6,7 +6,6 @@ export default function ChipRack(props) {
   const [radioChip, setRadioChip] = useState(0);
 
   const onUpdate = (chipNumber) => {
-    console.log(chipNumber);
     setRadioChip(chipNumber);
     globalCtx.setChip(chipNumber);
   };

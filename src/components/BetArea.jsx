@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 export default function BetArea(props) {
@@ -9,11 +9,14 @@ export default function BetArea(props) {
     if (e.shiftKey) {
       if (wager < globalCtx.chip) {
         setWager(0);
+        globalCtx.setBank(globalCtx.bank + wager);
       } else {
         setWager(wager - globalCtx.chip);
+        globalCtx.setBank(globalCtx.bank + globalCtx.chip);
       }
     } else {
       setWager(wager + globalCtx.chip);
+      globalCtx.setBank(globalCtx.bank - globalCtx.chip);
     }
   }
 
