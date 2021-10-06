@@ -22,8 +22,8 @@ export default function BetArea(props) {
 
   return (
     <div className={`${props.name}`} onClick={handleClick}>
-      {props.name}
-      {wager}
+      {props.name} -
+      Wager: {wager}
     </div>
   );
 }

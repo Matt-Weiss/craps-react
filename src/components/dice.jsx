@@ -33,10 +33,10 @@ export default function Dice() {
         </button>
       </div>
       <div className="dice-container">
-        <div className="die-1">{dieOne}</div>
-        <div className="die-2">{dieTwo}</div>
+        <div className="die-1">Die One: {dieOne}</div>
+        <div className="die-2">Die Two: {dieTwo}</div>
       </div>
-      <div className="total-roll">{dieOne + dieTwo}</div>
+      <div className="total-roll">Total Roll: {globalCtx.roll}</div>
     </div>
   );
 }
