@@ -5,12 +5,15 @@ export const GlobalContext = createContext({});
 export const GlobalProvider = ({ children }) => {
   // state variables
   const [chip, setChip] = useState(0);
-  const [roll, setRoll] = useState(0);
   const [bank, setBank] = useState(1000);
 
+  function resolveRoll (roll) {
+    
+  }
+  
   return (
     <GlobalContext.Provider
-      value={{ chip, setChip, roll, setRoll, bank, setBank }}
+      value={{ chip, setChip, bank, setBank, resolveRoll }}
     >
       {children}
     </GlobalContext.Provider>

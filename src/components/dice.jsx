@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
-export default function Dice() {
+export default function Dice(props) {
   const globalCtx = useContext(GlobalContext);
   const [dieOne, setDieOne] = useState(0);
   const [dieTwo, setDieTwo] = useState(0);
@@ -16,14 +16,12 @@ export default function Dice() {
   function rollDice() {
     const dOne = getRandomIntInclusive(1, 6);
     const dTwo = getRandomIntInclusive(1, 6);
+    const total = dOne + dTwo
     setDieOne(dOne);
     setDieTwo(dTwo);
-    setTotalRoll(dOne + dTwo);
+    setTotalRoll(total);
+    globalCtx.resolveRoll(total)
   }
-
-  useEffect(() => {
-    globalCtx.setRoll(dieOne + dieTwo);
-  }, [totalRoll]);
 
   return (
     <div className="roll-container">
@@ -33,10 +31,10 @@ export default function Dice() {
         </button>
       </div>
       <div className="dice-container">
-        <div className="die-1">{dieOne}</div>
-        <div className="die-2">{dieTwo}</div>
+        <div className="die-1">Die One: {dieOne}</div>
+        <div className="die-2">Die Two: {dieTwo}</div>
       </div>
-      <div className="total-roll">{dieOne + dieTwo}</div>
+      <div className="total-roll">Total Roll: {totalRoll}</div>
     </div>
   );
 }
